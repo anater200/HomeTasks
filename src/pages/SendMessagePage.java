@@ -24,7 +24,6 @@ public class SendMessagePage {
         chooseAddresseeInput.fillIn("testbestdb@gmail.com");
         writeMessageInput.fillIn("Письмо самому себе");
         sendMessageButton.click();
-        // Добавить обьекты и методы которые отправят письмо
         return this;
     }
 

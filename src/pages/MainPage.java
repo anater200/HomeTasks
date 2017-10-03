@@ -13,10 +13,6 @@ public class MainPage {
 
 
 
-
-
-
-
     public SendMessagePage openGmail() {
         goToGmail.click();
         if(loginPageisShown()){
@@ -25,7 +21,7 @@ public class MainPage {
         if(recoveryEmailInput.isPresent()){
             recoveryEmailInput.fillIn("sergiitst2@gmail.com");
         }
-        //метод который включает в себя переход по кнопке почта на gmail далее логин
+
         return new SendMessagePage();
 
     }
