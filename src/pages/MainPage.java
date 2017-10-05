@@ -15,10 +15,10 @@ public class MainPage {
 
     public SendMessagePage openGmail() {
         goToGmail.click();
-        if(loginPageisShown()){
+       if(loginPageisShown()){
             new LoginPage().login();
         }
-        if(recoveryEmailInput.isPresent()){
+       if(recoveryEmailInput.isPresent()){
             recoveryEmailInput.fillIn("sergiitst2@gmail.com");
         }
 

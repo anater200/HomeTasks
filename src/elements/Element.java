@@ -1,9 +1,6 @@
 package elements;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 
 import static tests.Main.getDriver;
 
@@ -15,7 +12,7 @@ public  abstract class Element {
         this.by = by;
     }
 
-    protected static WebElement composeWebElement(By by) {
+    protected static WebElement composeWebElement(By by){
         return getDriver().findElement(by);
     }
 
