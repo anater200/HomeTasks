@@ -16,7 +16,7 @@ public class Main {
 
     @BeforeClass
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromedriver\\chromedriver_2_32.exe");
+        System.setProperty("webdriver.chrome.driver", Main.class.getResource("/drivers/chromedriver_2_32.exe").getFile());
         ChromeOptions options = new ChromeOptions();
         ChromeDriver chromeDriver = new ChromeDriver(options);
         driver = new EventFiringWebDriver(chromeDriver);
