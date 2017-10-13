@@ -54,6 +54,15 @@ public  abstract class Element {
                 });
 //        TestCase.setImplicitlyWait(TestCase.DEFAULT_WAIT);
     }
+
+    public void scrollToElement() {
+        try {
+            ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView();", composeWebElement(by));
+        } catch (StaleElementReferenceException ignore) {
+            //ignore this exception
+        }
+    }
 }
+
 
 

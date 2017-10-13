@@ -7,10 +7,12 @@ import org.openqa.selenium.By;
 
 
 
+
 public class HabrMainPage {
     private Button loginButton = new Button(By.xpath("//*[@id='login']"));
     private Button userProfileButton = new Button(By.xpath("//*[@class='dropdown dropdown_user']"));
     private Label quitLabel = new Label(By.linkText("Выйти"));
+
 
 
     public HabrLoginPage goToLoginPage() {

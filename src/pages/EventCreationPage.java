@@ -18,6 +18,7 @@ public class EventCreationPage {
 
 
     public EventCreationPage fillInEventFields() {
+
         eventNameInput.fillIn("New event");
         startTimeButton.clear();
         waitInSeconds(2);
