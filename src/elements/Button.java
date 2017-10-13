@@ -9,5 +9,8 @@ public class Button extends Element{
     public void click(){
         composeWebElement(by).click();
     }
+    public void clear(){
+        composeWebElement(by).clear();
+    }
 
 }

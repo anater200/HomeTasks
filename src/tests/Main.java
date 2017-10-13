@@ -1,14 +1,17 @@
 package tests;
 
+import Conf.CaptureScreenShotOnFailureListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 
 import java.awt.*;
 import java.util.concurrent.TimeUnit;
+@Listeners(CaptureScreenShotOnFailureListener.class)
 
 public class Main {
     private static WebDriver driver;
@@ -22,17 +25,21 @@ public class Main {
         driver = new EventFiringWebDriver(chromeDriver);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         getDriver().get(baseUrl);
+        maximizeScreen(driver);
 
     }
 
 
     @AfterClass(alwaysRun = true)
     public void tearDown() {
-        driver.quit();
+        stopDriver();
     }
 
     public static WebDriver getDriver() {
         return driver;
+    }
+    public static void stopDriver(){
+        driver.quit();
     }
 
     public static void waitInSeconds(int seconds){

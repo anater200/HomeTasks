@@ -18,6 +18,7 @@ public class MainPage {
     private Button openMapsButton = new Button(By.xpath("//span[text()='Карти']"));
     private TextInput searchInput = new TextInput(By.xpath("//div[@class='gstl_0 sbib_a']//input"));
     private Button performSearchButton = new Button(By.cssSelector("input.lsb"));
+    private Button openGoogleCalendarButton = new Button(By.xpath("//span[text()='Календар']"));
 
 
 
@@ -72,7 +73,22 @@ public class MainPage {
         performSearchButton.click();
         return new SearchResultPage();
     }
+
+    public GoogleCalendarPage openGoogleCalendar() {
+        openGoogleAppsButton.click();
+        waitInSeconds(1);
+        openGoogleCalendarButton.click();
+        if (loginPageisShown()) {
+            new LoginPage().login();
+        }
+        if (recoveryEmailInput.isPresent()) {
+            recoveryEmailInput.fillIn("sergiitst2@gmail.com");
+        }
+        return new GoogleCalendarPage();
     }
+
+
+}
 
 
 

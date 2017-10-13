@@ -20,6 +20,7 @@ public  abstract class Element {
         return getDriver().findElement(by);
     }
 
+
     public boolean isPresent() {
         try {
             try {
@@ -51,5 +52,8 @@ public  abstract class Element {
                         return false;
                     }
                 });
+//        TestCase.setImplicitlyWait(TestCase.DEFAULT_WAIT);
     }
 }
+
+
