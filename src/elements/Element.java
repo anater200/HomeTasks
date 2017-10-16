@@ -2,7 +2,9 @@ package elements;
 
 import com.google.common.base.Function;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
@@ -62,6 +64,21 @@ public  abstract class Element {
             //ignore this exception
         }
     }
+    public void waitForElementToBeInvisible() {
+        WebDriverWait wait = new WebDriverWait(getDriver(), 30);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
+    }
+
+    public void waitForElementToBeVisible() {
+        WebDriverWait wait = new WebDriverWait(getDriver(), 30);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+    }
+
+    public void waitForElementToBeClickable() {
+        WebDriverWait wait = new WebDriverWait(getDriver(), 30);
+        wait.until(ExpectedConditions.elementToBeClickable(by));
+    }
+
 }
 
 
