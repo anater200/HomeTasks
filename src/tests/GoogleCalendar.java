@@ -12,7 +12,11 @@ public class GoogleCalendar extends Main {
         MainPage mainPage = new MainPage();
         mainPage.openGoogleCalendar()
                 .createEvent()
-                .fillInEventFields();
+                .fillInEventFields()
+                .eventPrecence()
+                .eventDeleting();
+
+
 
 
     }
