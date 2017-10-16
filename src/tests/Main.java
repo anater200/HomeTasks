@@ -8,6 +8,8 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
+import pages.LoginPage;
+import pages.MainPage;
 
 import java.awt.*;
 import java.util.concurrent.TimeUnit;
@@ -26,6 +28,9 @@ public class Main {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         getDriver().get(baseUrl);
         maximizeScreen(driver);
+        MainPage mainPage = new MainPage();
+        mainPage.openLoginForm()
+                .login();
 
     }
 

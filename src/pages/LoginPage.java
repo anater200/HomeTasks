@@ -8,7 +8,8 @@ import static tests.Main.waitInSeconds;
 public class LoginPage {
     private static TextInput emailInput = new TextInput(By.cssSelector("input[type='email']"));
     private TextInput passwordInput = new TextInput(By.cssSelector("input[type='password']"));
-    private Button nextButton = new Button(By.xpath("//span[text()='Next']"));
+    private Button nextButton = new Button(By.xpath("//span[text()='Далі']"));
+
 
 
     public void login() {
