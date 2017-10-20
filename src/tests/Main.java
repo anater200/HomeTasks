@@ -1,6 +1,6 @@
 package tests;
 
-import Conf.CaptureScreenShotOnFailureListener;
+import conf.CaptureScreenShotOnFailureListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -8,7 +8,6 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
-import pages.LoginPage;
 import pages.MainPage;
 
 import java.awt.*;
@@ -18,6 +17,7 @@ import java.util.concurrent.TimeUnit;
 public class Main {
     private static WebDriver driver;
     private String baseUrl = "https://www.google.com.ua/";
+    private String baseUrl1 = "https://employees.dbbest.com/Users/TimeReport?id=62825020&own=520256";
 
     @BeforeClass
     public void setUp() {
@@ -26,12 +26,12 @@ public class Main {
         ChromeDriver chromeDriver = new ChromeDriver(options);
         driver = new EventFiringWebDriver(chromeDriver);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        getDriver().get(baseUrl);
+        getDriver().get(baseUrl1);
         maximizeScreen(driver);
         MainPage mainPage = new MainPage();
-        mainPage.openLoginForm()
+        /*mainPage.openLoginForm()
                 .login();
-
+*/
     }
 
 

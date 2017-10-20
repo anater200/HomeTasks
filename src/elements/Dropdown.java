@@ -8,9 +8,15 @@ public class Dropdown extends Element {
         super(by);
 
     }
-    public void select() {
-        composeWebElement(by).click();
-
-
+    public void selectByValue(String value) {
+        Select selector = new Select(composeWebElement(by));
+        selector.selectByValue(value);
     }
+    public void selectByIndex(int value) {
+        Select selector = new Select(composeWebElement(by));
+        selector.selectByIndex(value);
+    }
+
+
+
 }

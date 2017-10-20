@@ -9,7 +9,8 @@ public class SendMail extends Main{
         MainPage mainPage = new MainPage();
         mainPage.openGmail()
                 .sendMessage()
-                .verifyMessage();
+                .verifyMessage()
+                .deleteMessage();
     }
 
 
